@@ -1,0 +1,9 @@
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Data\bin\Debug\Project.Library.Data.dll
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Data\bin\Debug\Project.Library.Data.pdb
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Data\bin\Debug\Bogus.dll
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Data\bin\Debug\Bogus.xml
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Data\obj\Debug\Project.Library.Data.csprojAssemblyReference.cache
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Data\obj\Debug\Project.Library.Data.csproj.CoreCompileInputs.cache
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Data\obj\Debug\Project.Library.Data.csproj.CopyComplete
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Data\obj\Debug\Project.Library.Data.dll
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Data\obj\Debug\Project.Library.Data.pdb
