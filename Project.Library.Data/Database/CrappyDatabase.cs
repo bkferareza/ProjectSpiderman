@@ -15,11 +15,13 @@ namespace Project.Library.Data.Database
         private static readonly object padlock = new object();
         private List<Book> books;
         private List<Borrower> borrowers;
+        private List<Transaction> transactions;
 
         private CrappyDatabase()
         {
             books = new List<Book>();
             borrowers = new List<Borrower>();
+            transactions = new List<Transaction>();
             Seed();
         }
 
@@ -52,6 +54,7 @@ namespace Project.Library.Data.Database
                                         .RuleFor(o => o.Title, f => f.Lorem.Sentence())
                                         .RuleFor(o => o.YearPublished, f => f.Date.Past())
                                         .RuleFor(o => o.Description, f => f.Lorem.Sentences())
+                                        .RuleFor(o => o.Quantity, f => f.Random.Int(5,10))
                                         .RuleFor(o => o.Created, f => f.Date.Recent())
                                         .RuleFor(o => o.Modified, f => f.Date.Recent());
 
@@ -73,6 +76,8 @@ namespace Project.Library.Data.Database
             }
         }
 
+        //CRUD For Database Entities
+
         public List<Book> GetBookList()
         {
             return this.books;
@@ -81,6 +86,11 @@ namespace Project.Library.Data.Database
         public List<Borrower> GetBorrowers()
         {
             return this.borrowers;
+        }
+
+        public List<Transaction> GetTransactions()
+        {
+            return this.transactions;
         }
 
         public Book CreateBook(Book book)
@@ -93,6 +103,83 @@ namespace Project.Library.Data.Database
             this.books.Add(book);
 
             return book;
+        }
+
+        public Borrower CreateBorrower(Borrower borrower)
+        {
+            var id = borrowers.Count;
+            borrower.Id = id;
+            borrower.Created = DateTime.Now;
+            borrower.Modified = borrower.Created;
+
+            this.borrowers.Add(borrower);
+
+            return borrower;
+        }
+
+        public Transaction CreateTransaction(Transaction transaction)
+        {
+            var id = transactions.Count;
+            transaction.Id = id;
+            transaction.Created = DateTime.Now;
+            transaction.Modified = DateTime.Now;
+
+            this.transactions.Add(transaction);
+
+            return transaction;
+        }
+
+        public bool UpdateBook(Book book)
+        {
+            try
+            {
+                var index = books.FindIndex(c => c.Id == book.Id);
+                books[index].Modified = DateTime.Now;
+                books[index].Title = book.Title;
+                books[index].Author = book.Author;
+                books[index].Description = book.Description;
+                books[index].YearPublished = book.YearPublished;
+                books[index].Genre = book.Genre;
+                books[index].Quantity = book.Quantity;
+
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
+            
+        }
+
+        public bool UpdateBorrower(Borrower borrower)
+        {
+            try {
+                var index = borrowers.FindIndex(c => c.Id == borrower.Id);
+                borrowers[index].Modified = DateTime.Now;
+                borrowers[index].Name = borrower.Name;
+                borrowers[index].Phone = borrower.Phone;
+                borrowers[index].Email = borrower.Email;
+                borrowers[index].Address = borrower.Address;
+
+                return true;
+            }
+            catch {
+                return false;
+            }
+        }
+
+        public void DeleteBook(int id)
+        {
+            var bookToRemove = books.Single(r => r.Id == id);
+            if (bookToRemove != null)
+                books.Remove(bookToRemove);
+        }
+
+        public void DeleteBorrower(int id)
+        {
+            var borrowerToDelete = borrowers.Single(r => r.Id == id);
+            if (borrowerToDelete != null)
+                borrowers.Remove(borrowerToDelete);
         }
     }
 }

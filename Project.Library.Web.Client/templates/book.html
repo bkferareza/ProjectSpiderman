@@ -1,0 +1,107 @@
+﻿<div ng-controller="bookController">
+    <h3>{{title}}</h3>
+
+    <div class="row">
+        <div class="col-md-6">
+            <input class="form-control" type="text" placeholder="Search Book" ng-model="filterBook" />
+        </div>
+        <div class="col-md-6">
+            <a href="/" class="btn btn-info pull-right">Home</a>
+        </div>
+    </div>
+    <br />
+    <div class="container-fluid">
+
+        <table class="table table-responsive-md">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Published</th>
+                    <th scope="col">Availability</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in books | filter: filterBook">
+                    <td>{{book.Title}}</td>
+                    <td>{{book.Author}}</td>
+                    <td>{{book.Description}}</td>
+                    <td>{{book.Genre}}</td>
+                    <td>{{book.YearPublished | date: YYYY}}</td>
+                    <td>{{book.Quantity}}</td>
+                    <td>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-info">Edit Details</button>
+                            <button class="btn btn-danger">Delete Book</button>
+                            <button class="btn btn-success" ng-disabled="{{book.Quantity == 0}}" ng-click="toggleRentModal(book)">Rent Book</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Renting Modal -->
+    <div class="modal fade" id="rentModal"
+         tabindex="-1"
+         role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rent A Book</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Details:</h4>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><span>Title</span></td>
+                                <td><span>{{transaction.Book.Title}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>Author</span></td>
+                                <td><span>{{transaction.Book.Author}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>Description</span></td>
+                                <td><span>{{transaction.Book.Description}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>Genre</span></td>
+                                <td><span>{{transaction.Book.Genre}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>Published</span></td>
+                                <td><span>{{transaction.Book.YearPublished | date: YYYY}}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Borrower :</p>
+                        </div>
+                        <div class="col-md-8">
+                            <select ng-model="transaction.Borrower">
+                                <option ng-repeat="borrower in borrowers" value={{borrower}}>{{borrower.Name}}</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <!--<tt>borrower: {{transaction | json}}</tt>-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="rentBook()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

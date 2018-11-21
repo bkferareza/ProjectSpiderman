@@ -1,0 +1,11 @@
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\bin\Debug\Project.Library.Logic.dll
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\bin\Debug\Project.Library.Logic.pdb
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\bin\Debug\Project.Library.Data.dll
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\bin\Debug\Bogus.dll
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\bin\Debug\Project.Library.Data.pdb
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\bin\Debug\Bogus.xml
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\obj\Debug\Project.Library.Logic.csprojAssemblyReference.cache
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\obj\Debug\Project.Library.Logic.csproj.CoreCompileInputs.cache
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\obj\Debug\Project.Library.Logic.csproj.CopyComplete
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\obj\Debug\Project.Library.Logic.dll
+C:\Users\bkvf\Desktop\Library\Project.Library\Project.Library.Logic\obj\Debug\Project.Library.Logic.pdb

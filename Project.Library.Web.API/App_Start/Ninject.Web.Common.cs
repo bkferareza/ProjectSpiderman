@@ -10,6 +10,9 @@ namespace Project.Library.Web.API.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Ninject.Web.Common.WebHost;
+    using Project.Library.Logic.Interfaces;
+    using Project.Library.Logic.Managers;
 
     public static class NinjectWebCommon 
     {
@@ -60,6 +63,9 @@ namespace Project.Library.Web.API.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IBookManager>().To<BookManager>();
+            kernel.Bind<ITransactionManager>().To<TransactionManager>();
+            kernel.Bind<IBorrowerManager>().To<BorrowerManager>();
         }        
     }
 }

@@ -1,0 +1,1 @@
+﻿var homeModule = angular.module('homeModule', ['ngResource']);

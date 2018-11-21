@@ -8,10 +8,10 @@ namespace Project.Library.Data.Enums
 {
     public enum Genre
     {
-        ScienceFiction,
+        Fiction,
         Satire,
         Drama,
-        ActionAdventure,
+        Action,
         Romance,
         Mystery,
         Horror,
