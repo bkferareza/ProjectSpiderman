@@ -37,8 +37,9 @@ namespace Project.Library.Web.API.Controllers
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public bool Put([FromBody]BorrowerDTO borrower)
         {
+            return this.borrowerManager.Update(borrower);
         }
 
         // DELETE api/<controller>/5

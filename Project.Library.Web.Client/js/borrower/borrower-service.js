@@ -1,5 +1,5 @@
 ﻿borrowerModule.factory('borrowerFactory', ['$http','$q', function ($http,$q){
-    var BaseUrl = 'http://localhost:51531/api/borrowers';
+    var BaseUrl = 'http://172.16.70.68:8080/api/borrowers';
     return {
         getBorrowers: function () {
             var deferred = $q.defer();

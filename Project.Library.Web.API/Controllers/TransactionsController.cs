@@ -35,7 +35,10 @@ namespace Project.Library.Web.API.Controllers
         // POST api/<controller>
         public TransactionDTO Post([FromBody]TransactionDTO value)
         {
-            return this.transactionManager.CreateBorrowTransaction(value);
+            if (value.TransactionType == "Borrow")
+                return this.transactionManager.CreateBorrowTransaction(value);
+            else
+                return this.transactionManager.CreateReturnTransaction(value);
         }
 
         // PUT api/<controller>/5

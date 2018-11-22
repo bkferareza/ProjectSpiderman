@@ -1,5 +1,5 @@
 ﻿transactionModule.factory('transactionFactory', ['$http', '$q', function ($http, $q) {
-    var BaseUrl = 'http://localhost:51531/api/transactions';
+    var BaseUrl = 'http://172.16.70.68:8080/api/transactions';
     return {
         getTransactions: function () {
             var deferred = $q.defer();

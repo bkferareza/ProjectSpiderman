@@ -1,4 +1,32 @@
 ﻿<div ng-controller="borrowerController">
-    <h1>Hi im borrower {{1+1}}</h1>
+    <h1>{{title}}</h1>
+    <div class="container-fluid">
+        <table class="table table-responsive-md">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="borrower in borrowers">
+                    <td>{{borrower.Name}}</td>
+                    <td>{{borrower.Address}}</td>
+                    <td>{{borrower.Email}}</td>
+                    <td>{{borrower.Phone}}</td>
+                    <td>
+                        <div class="btn-group-vertical">
+                            <button class="btn btn-info">Edit Details</button>
+                            <button class="btn btn-danger">Delete Borrower</button>
+                            <!--<button class="btn btn-success">Rent Book</button>-->
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <a href="/" class="btn btn-info">Home</a>
 </div>

@@ -1,5 +1,5 @@
 ﻿bookModule.factory('bookFactory', ['$http', '$q', function ($http, $q){
-    var BaseUrl = 'http://localhost:51531/api/books';
+    var BaseUrl = 'http://172.16.70.68:8080/api/books';
     return {
         getBooks: function () {
             var deferred = $q.defer();

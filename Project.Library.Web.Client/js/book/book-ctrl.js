@@ -5,6 +5,7 @@
     self.borrowers = {};
     self.filterBook = "";
     self.transaction = {};
+    self.Sample = 1 < 1;
 
     self.getBooks = function ()
     {
@@ -32,6 +33,7 @@
 
     self.rentBook = function () {
         self.transaction.Borrower = JSON.parse(self.transaction.Borrower);
+        self.transaction.TransactionType = 'Borrow';
         transactionFactory.createTransaction(self.transaction)
             .then(function (result) {
                 console.log(result.data);

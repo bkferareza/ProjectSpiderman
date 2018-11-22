@@ -31,13 +31,15 @@ namespace Project.Library.Web.API.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public BookDTO Post([FromBody]BookDTO value)
         {
+            return this.bookManager.Create(value);
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public bool Put([FromBody]BookDTO value)
         {
+            return this.bookManager.Update(value);
         }
 
         // DELETE api/<controller>/5
